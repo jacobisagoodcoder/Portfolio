@@ -33,4 +33,11 @@ body{
 #consWords{
     position: relative;
     top: 50%;
+    display: flex;
+}
+
+#consUnderscore{
+    position: relative;
+    top: 50%;
+    display: flex;
 }

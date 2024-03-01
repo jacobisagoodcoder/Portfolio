@@ -5,31 +5,47 @@
 
 const introWord = "Hello! Welcome to my profile page!";
 const introPhrase = introWord.split('');
-const finalArr = [];
+
+
 
 let consWords = document.getElementById("consWords");
+let consPhrase = document.getElementById("consPhrase");
+let consUnderscore = document.getElementById("consUnderscore");
 
+let index = 0;
 let isBool = true;
 
-setInterval(underscoreBlink, 1000);
+setInterval(underscoreBlink, 500)
 
 function underscoreBlink() {
   if (isBool) {
-    consWords.innerHTML = "_";
+    consUnderscore.innerHTML = "_";
     isBool = false;
   } else if (!isBool) {
-    consWords.innerHTML = "";
+    consUnderscore.innerHTML = "";
     isBool = true;
   }
 }
 
 //
 
-function addIntroPhrase(){
-    introPhrase.forEach((letter) => {
-        finalArr.push(letter);
-        addFinalPhrase();
-    })
+function introPhraseThing(){
+
+  if(introPhrase.length > 0){
+    let character = introPhrase[index]
+    let h1 = document.createTextNode(character);
+    h1.textContent = character;
+    
+
+    consWords.appendChild(h1);
+
+    index++;
+   
+
+    setTimeout(introPhraseThing, 250);
+  }
 }
+
+introPhraseThing();
 
 //for loop that places each letter in array in it's own <span> with 'hidden' class that gets removed one by one? 
