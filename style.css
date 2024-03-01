@@ -1,0 +1,43 @@
+body{
+    background-color:  white;
+    margin: 0;
+    padding: 0;
+    /* adds custom google font to whole page */
+    font-family: "Kode Mono", monospace;
+}
+
+.profileHeader{
+    background-color: #7CB9E8;
+    height: 15%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#profilePhoto{
+    height: 100%;
+    border-radius: 100%;
+    border: solid black 2px;
+    position: relative;
+    top: 50%;
+}
+
+#cons{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+}
+
+#consWords{
+    position: relative;
+    top: 50%;
+    display: flex;
+}
+
+#consUnderscore{
+    position: relative;
+    top: 50%;
+    display: flex;
+}
