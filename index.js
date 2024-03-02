@@ -1,41 +1,34 @@
-const introWord = "Hello! Welcome to my profile page!";
-const introPhrase = introWord.split('');
-
-let consWords = document.getElementById("consWords");
-let consUnderscore = document.getElementById("consUnderscore");
-let personalInfo = document.getElementById("personalInfo");
-
-let index = 0;
-let isBool = true;
+//1. variable that contains string of words I want it to spell out
+//2. create a function that splits string into an array
+//3. loop over the array and append each letter to the DOM
+//4. use setInterval() to call function every 1 second
 
 
-function underscoreBlink() {
-  if (isBool) {
-    consUnderscore.innerHTML = "_";
-    isBool = false;
-  } else if (!isBool) {
-    consUnderscore.innerHTML = "";
-    isBool = true;
+const introPhrase = "Hello! Welcome to my portfolio page!"
+const consDomInput = document.getElementById('consWords');
+let phraseIndex = 0;
+
+
+function consoleWriter(phrase, domInput){
+  let phraseArray = phrase.split('');
+  phraseArray.push(0);
+  const paragraphTag = document.createElement('p');
+
+  if(phraseArray[phraseIndex] === 0){
+    phraseArray.pop();
+    clearInterval(consoleWriterInterval);
   }
+  else if(phraseArray.length > 0){
+      if(phraseArray[phraseIndex] === " "){
+      paragraphTag.innerHTML = '&nbsp;';
+      domInput.appendChild(paragraphTag);
+      phraseIndex++
+    }else{
+    paragraphTag.textContent = phraseArray[phraseIndex];
+    domInput.appendChild(paragraphTag);
+    phraseIndex++;
+  } 
+}
 }
 
-function introPhraseThing(){
-
-  if(introPhrase.length > 0){
-    let character = introPhrase[index]
-    let h1 = document.createTextNode(character);
-    h1.textContent = character;
-    
-    consWords.appendChild(h1);
-
-    index++;
-   
-    setTimeout(introPhraseThing, 250);
-  } else if(introPhrase.length == 0){
-    //call future func here for personal info/project information
-  }
-}
-
-
-introPhraseThing();
-setInterval(underscoreBlink, 500)
+const consoleWriterInterval = setInterval(function(){consoleWriter(introPhrase, consDomInput)}, 250);
