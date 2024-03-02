@@ -25,14 +25,15 @@ body{
 }
 
 #cons{
-    height: 50vh;
+    height: 30vh;
     display: flex;
     justify-content: center;
 }
 
 #consWords{
+    height: 10%;
     position: relative;
-    top: 50%;
+    top: 80%;
     display: flex;
 }
 
@@ -40,4 +41,33 @@ body{
     position: relative;
     top: 50%;
     display: flex;
+}
+
+.aboutMe{
+    margin-left: 2%;
+    border: dashed black 2px;
+    width: 40%;
+    height: 65vh;
+    position: relative;
+    bottom: 75%;
+}
+
+.codeProjects{
+    margin-right: 2%;
+    border: dashed black 2px;
+    width: 40%;
+    height: 65vh;
+    position: relative;
+    bottom: 75%;
+    overflow-y: scroll;
+}
+
+.mainContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hidden{
+    display: none;
 }
