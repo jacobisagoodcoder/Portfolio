@@ -2,7 +2,7 @@ const introPhrase = "Hello! Welcome to my portfolio page!";
 const consDomInput = document.getElementById("consWords");
 let phraseIndex = 0;
 
-function consoleWriter(phrase, domInput, interval, nextFunc) {
+function consoleWriter(phrase, domInput, interval) {
   let phraseArray = phrase.split("");
   phraseArray.push(0);
   const paragraphTag = document.createElement("p");
@@ -12,7 +12,6 @@ function consoleWriter(phrase, domInput, interval, nextFunc) {
     phraseArray.pop();
     clearInterval(interval);
     //calls next function
-    nextFunc();
   } else if (phraseArray.length > 0) {
     if (phraseArray[phraseIndex] === " ") {
       //checks for spaces to be properly input into DOM
@@ -32,12 +31,7 @@ function consoleWriter(phrase, domInput, interval, nextFunc) {
 //in the DOM and the name of the interval calling it in this case itself, finally the next function
 //to be called after the console writer is completed
 const introConsoleWriterInterval = setInterval(function () {
-  consoleWriter(introPhrase, consDomInput, introConsoleWriterInterval, nextFunction);
+  consoleWriter(introPhrase, consDomInput, introConsoleWriterInterval);
 }, 200);
-
-function nextFunction(){
-
-}
-//About Me Header Console Scroll
 
 
