@@ -84,3 +84,14 @@ body{
     border-radius: 100%;
     border: solid black 2px;
 }
+
+.project{
+    text-align: center;
+    border-bottom: solid black 1px;
+}
+
+.project > img{
+    width: 20%;
+    border-radius: 100%;
+    border: solid black 2px;
+}
